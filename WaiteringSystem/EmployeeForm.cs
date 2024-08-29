@@ -24,7 +24,25 @@ namespace WaiteringSystem
         public EmployeeForm()
         {
             InitializeComponent();
+
+            this.Activated += EmployeeForm_Activated;
         }
+
+        #region Form Events
+        private void EmployeeForm_Load(object sender, EventArgs e)
+        {
+            ShowAll(false, roleValue);
+
+            controller = new EmployeeController();
+        }
+
+        private void EmployeeForm_Activated(object sender, EventArgs e)
+        {
+            HW_rad_btn.Checked = false; //
+
+            ShowAll(false, roleValue);
+        }
+        #endregion
 
         #region Utility Methods
         public void ShowAll(bool value, Role.RoleType roleType)
@@ -37,6 +55,12 @@ namespace WaiteringSystem
             pay_lbl.Visible = value;
             hrz_lbl.Visible = value;
             tips_lbl.Visible = value;
+
+            id_tbx.Visible = value;
+            e_id_tbx.Visible = value;
+            name_tbx.Visible = value;
+            phone_tbx.Visible = value;
+            pay_tbx.Visible = value;
 
             // Set radio buttons visibility
             if (!value)
@@ -151,6 +175,39 @@ namespace WaiteringSystem
             ShowAll(true, roleValue);
 
             id_tbx.Focus();
+        }
+
+        #endregion
+
+        #region Action Buttons Events
+
+        // SUBMIT BUTTON
+        private void sub_btn_Click(object sender, EventArgs e)
+        {
+            PopulateObject(roleValue);
+
+            MessageBox.Show("The record will be submitted to the database.", "Submission", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            controller.DataMaintenance(empl);
+
+            controller.FinalizeChanges(empl);
+
+            ClearAll();
+
+            ShowAll(false, roleValue);
+        }
+
+        // CANCEL BUTTON
+        private void cancel_btn_Click(object sender, EventArgs e)
+        {
+            ClearAll();
+            ShowAll(false, roleValue);
+        }
+
+        // EXIT BUTTON
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         #endregion
 

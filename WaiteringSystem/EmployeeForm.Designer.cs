@@ -217,6 +217,7 @@
             this.cancel_btn.TabIndex = 17;
             this.cancel_btn.Text = "Cancel";
             this.cancel_btn.UseVisualStyleBackColor = true;
+            this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
             // 
             // sub_btn
             // 
@@ -227,6 +228,7 @@
             this.sub_btn.TabIndex = 18;
             this.sub_btn.Text = "Submit";
             this.sub_btn.UseVisualStyleBackColor = true;
+            this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
             // 
             // button3
             // 
@@ -237,6 +239,7 @@
             this.button3.TabIndex = 19;
             this.button3.Text = "Exit";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // EmployeeForm
             // 
@@ -265,6 +268,7 @@
             this.Controls.Add(this.HW_rad_btn);
             this.Name = "EmployeeForm";
             this.Text = "EmployeeForm";
+            this.Load += new System.EventHandler(this.EmployeeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
