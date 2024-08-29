@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using WaiteringSystem.Business;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WaiteringSystem
 {
@@ -61,8 +62,56 @@ namespace WaiteringSystem
                 hrz_lbl.Visible = false;
                 hours_tbx.Visible = false;
             }
-
         }
+
+        private void ClearAll()
+        { 
+            id_tbx.Clear();
+            e_id_tbx.Clear();
+            name_tbx.Clear();
+            phone_tbx.Clear();
+            pay_tbx.Clear();
+            hours_tbx.Clear();
+            tips_tbx.Clear();
+        }
+
+        private void PopulateObject(Role.RoleType roleType)
+        {
+            HeadWaiter headW;
+            Waiter waiter;
+            Runner runner;
+
+            Employee employee = new Employee(roleType);
+
+            employee.ID = id_tbx.Text;
+            employee.EmployeeID = e_id_tbx.Text;
+            employee.Name = name_tbx.Text;
+            employee.Telephone = phone_tbx.Text;
+
+            switch (employee.role.getRoleValue)
+            {
+                case Role.RoleType.Headwaiter:
+                    headW = (HeadWaiter)(employee.role);
+                    headW.SalaryAmount = decimal.Parse(pay_tbx.Text);
+                    break;
+
+                case Role.RoleType.Waiter:
+                    waiter = (Waiter)(employee.role);
+                    waiter.getTips = decimal.Parse(tips_tbx.Text);
+                    waiter.getShifts = int.Parse(hours_tbx.Text);
+                    break;
+
+                case Role.RoleType.Runner:
+                    runner = (Runner)(employee.role);
+                    runner.getShifts = int.Parse(hours_tbx.Text);
+                    break;
+            }
+        }
+
+        #endregion
+
+        #region Radio Button CheckChanged Events
+
         #endregion
     }
 }
