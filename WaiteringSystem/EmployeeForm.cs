@@ -49,6 +49,9 @@ namespace WaiteringSystem
             // Check for Waiter or Runner roles and set visibility for specific controls
             if (roleType == Role.RoleType.Waiter || roleType == Role.RoleType.Runner)
             {
+                pay_lbl.Visible = false;
+                pay_tbx.Visible = false;
+
                 tips_lbl.Visible = value;
                 tips_tbx.Visible = value;
                 hrz_lbl.Visible = value;
@@ -111,7 +114,46 @@ namespace WaiteringSystem
         #endregion
 
         #region Radio Button CheckChanged Events
+        private void HW_rad_btn_CheckedChanged(object sender, EventArgs e)
+        {
+            this.Text = "Add Head Waiter";
 
+            roleValue = Role.RoleType.Headwaiter;
+
+            pay_lbl.Text = "Salary";
+
+            ShowAll(true, roleValue);
+
+            id_tbx.Focus();
+        }
+
+        private void W_rad_btn_CheckedChanged(object sender, EventArgs e)
+        {
+            this.Text = "Add Waiter";
+
+            roleValue = Role.RoleType.Waiter;
+
+            hrz_lbl.Text = "Hours Worked";
+
+            ShowAll(true, roleValue);
+
+            id_tbx.Focus();
+        }
+
+        private void run_rd_btn_CheckedChanged(object sender, EventArgs e)
+        {
+            this.Text = "Add Runner";
+
+            roleValue = Role.RoleType.Runner;
+
+            hrz_lbl.Text = "Hours Worked";
+
+            ShowAll(true, roleValue);
+
+            id_tbx.Focus();
+        }
         #endregion
+
+
     }
 }

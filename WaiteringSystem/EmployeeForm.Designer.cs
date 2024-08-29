@@ -61,6 +61,7 @@
             this.HW_rad_btn.TabStop = true;
             this.HW_rad_btn.Text = "Head Waiter";
             this.HW_rad_btn.UseVisualStyleBackColor = true;
+            this.HW_rad_btn.CheckedChanged += new System.EventHandler(this.HW_rad_btn_CheckedChanged);
             // 
             // W_rad_btn
             // 
@@ -73,6 +74,7 @@
             this.W_rad_btn.TabStop = true;
             this.W_rad_btn.Text = "Waiter";
             this.W_rad_btn.UseVisualStyleBackColor = true;
+            this.W_rad_btn.CheckedChanged += new System.EventHandler(this.W_rad_btn_CheckedChanged);
             // 
             // run_rd_btn
             // 
@@ -85,52 +87,53 @@
             this.run_rd_btn.TabStop = true;
             this.run_rd_btn.Text = " Runner";
             this.run_rd_btn.UseVisualStyleBackColor = true;
+            this.run_rd_btn.CheckedChanged += new System.EventHandler(this.run_rd_btn_CheckedChanged);
             // 
             // id_tbx
             // 
-            this.id_tbx.Location = new System.Drawing.Point(143, 133);
+            this.id_tbx.Location = new System.Drawing.Point(136, 129);
             this.id_tbx.Name = "id_tbx";
-            this.id_tbx.Size = new System.Drawing.Size(100, 20);
+            this.id_tbx.Size = new System.Drawing.Size(133, 20);
             this.id_tbx.TabIndex = 3;
             // 
             // e_id_tbx
             // 
-            this.e_id_tbx.Location = new System.Drawing.Point(407, 133);
+            this.e_id_tbx.Location = new System.Drawing.Point(422, 128);
             this.e_id_tbx.Name = "e_id_tbx";
             this.e_id_tbx.Size = new System.Drawing.Size(149, 20);
             this.e_id_tbx.TabIndex = 4;
             // 
             // name_tbx
             // 
-            this.name_tbx.Location = new System.Drawing.Point(143, 188);
+            this.name_tbx.Location = new System.Drawing.Point(179, 190);
             this.name_tbx.Name = "name_tbx";
             this.name_tbx.Size = new System.Drawing.Size(287, 20);
             this.name_tbx.TabIndex = 5;
             // 
             // phone_tbx
             // 
-            this.phone_tbx.Location = new System.Drawing.Point(143, 231);
+            this.phone_tbx.Location = new System.Drawing.Point(179, 231);
             this.phone_tbx.Name = "phone_tbx";
             this.phone_tbx.Size = new System.Drawing.Size(168, 20);
             this.phone_tbx.TabIndex = 6;
             // 
             // pay_tbx
             // 
-            this.pay_tbx.Location = new System.Drawing.Point(143, 270);
+            this.pay_tbx.Location = new System.Drawing.Point(179, 272);
             this.pay_tbx.Name = "pay_tbx";
             this.pay_tbx.Size = new System.Drawing.Size(100, 20);
             this.pay_tbx.TabIndex = 7;
             // 
             // hours_tbx
             // 
-            this.hours_tbx.Location = new System.Drawing.Point(143, 318);
+            this.hours_tbx.Location = new System.Drawing.Point(179, 320);
             this.hours_tbx.Name = "hours_tbx";
             this.hours_tbx.Size = new System.Drawing.Size(100, 20);
             this.hours_tbx.TabIndex = 8;
             // 
             // tips_tbx
             // 
-            this.tips_tbx.Location = new System.Drawing.Point(143, 372);
+            this.tips_tbx.Location = new System.Drawing.Point(179, 372);
             this.tips_tbx.Name = "tips_tbx";
             this.tips_tbx.Size = new System.Drawing.Size(100, 20);
             this.tips_tbx.TabIndex = 9;
@@ -149,7 +152,7 @@
             // 
             this.emplID_lbl.AutoSize = true;
             this.emplID_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emplID_lbl.Location = new System.Drawing.Point(298, 135);
+            this.emplID_lbl.Location = new System.Drawing.Point(298, 129);
             this.emplID_lbl.Name = "emplID_lbl";
             this.emplID_lbl.Size = new System.Drawing.Size(96, 16);
             this.emplID_lbl.TabIndex = 11;
